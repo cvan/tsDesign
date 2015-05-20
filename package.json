@@ -2,10 +2,14 @@
   "name": "njpp-v5",
   "version": "5.0.0",
   "description": "Website for Not Just Pretty Pictures",
-  "main": "_site/index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "./index.html",
+  "repository": "https://github.com/tsmuse/njppWeb",
   "author": "Tony Santos",
-  "license": "ISC"
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-compass": "^1.0.3",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-jekyll": "^0.4.2"
+  }
 }
