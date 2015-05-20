@@ -1,0 +1,11 @@
+{
+  "name": "njpp-v5",
+  "version": "5.0.0",
+  "description": "Website for Not Just Pretty Pictures",
+  "main": "_site/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tony Santos",
+  "license": "ISC"
+}
