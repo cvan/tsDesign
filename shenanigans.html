@@ -1,0 +1,70 @@
+---
+---
+<!DOCTYPE html>
+<html>
+{% include findTheCode.html %} 
+{% include njpphead.html %}
+<body>
+    <div id="wrapper">
+        <div class="container">
+            {% include njppnav.html %}
+            <div class="content portfolioContent">
+                <section>
+                    <div class="fancyTop">
+                        <div class="shenanigansIntro">
+                             <p>
+                                 These are the the projects I've cooked up in my own time, either because the idea amused me, it was part of something larger I was trying to learn, or a number of other reasons I'm going to jam into the category &quot;Art.&quot;
+                             </p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="sectionHeader">
+                                <h1>Shenanigans</h1>
+                        </div>
+                    <div class="shenanigans">
+                        <ul class="shenanigansList">
+                        <!-- Wedding Site -->
+                            <li>
+                                <a href="http://www.tonyandsilvia.com/">
+
+                                    <img src="img/wedding.png" alt="Wedding website image"/>
+                                    <h1>Tony &amp; Silvia dot com</h1>
+                                    <p>
+                                        Weddings require webdesign now, as I found out. This was a fun place to explore Susy grids for the first time. (bye bye bootstrap grid.) The RSVP system built into the site was also the first mission-critical Django application I had built and deployed. 
+                                    </p>    
+                                </a>
+                            </li>
+                        <!-- BabySloth.me -->
+                            <li>
+                                <a href="http://www.babysloth.me/">
+
+                                    <img src="img/babysloth.png" alt="On-demand baby sloth webapp"/>
+                                    <h1>Babysloth.Me</h1>
+                                    <p>
+                                        Baby sloths. On demand. What more do you need? This was a project I used to learn how to deploy a Ruby on Rails app, a subject none of the books or tutorials seems to go into in much detail. 
+                                    </p>    
+                                </a>
+                            </li>
+                        <!-- prestigiousuniversity.biz -->
+                            <li>
+                                <a href="http://www.prestigiousuniversity.biz/">
+
+                                    <img src="img/prestU.png" alt="A totally legit institution of higher education"/>
+                                    <h1>Prestigiousuniversity.biz</h1>
+                                    <p>
+                                        My totally not fake, completely 100% legit, 100% for profit Internet college.
+                                    </p>    
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <div class="footerSkew"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+    {% include njppfoot.html %}
+</body>
+</html>

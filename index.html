@@ -1,0 +1,110 @@
+---
+---
+<!DOCTYPE html>
+<html>
+    {% include findTheCode.html %}
+    {% include njpphead.html %}
+
+    <body>
+        <div id="wrapper">
+            <div class="container">
+                {% include njppnav.html %}
+                <div class="content indexContent">
+                    <section>
+                        <div class="fancyTop">
+                            <div id="fancyText">
+                                <p class="bigFancyText">Designer</p>
+                                <p class="smFancyText"><span class="aka">aka</span> design generalist</p>
+                                <p class="smFancyText"><span class="aka">aka</span> design unicorn</p>
+                                <p class="smFancyText"><span class="aka">aka</span> problem solver</p>
+                            </div>
+                            <div id="selfie">
+                                <img src="img/headshot_md.jpg" alt="photo of Tony Santos"/>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="sectionHeader">
+                                <h1>portfolio <span class="aka">aka what you're here to see</span></h1>
+                        </div>
+                        <ul class="portfolioList">
+                    <!-- Sponsored FFOS -->
+                    <li>
+                        <a href="portfolio/mozillaPhone.html">
+
+                            <img src="portfolio/img/ffosHomepageImage_lg.png" alt=" Firefox OS project image"/>
+                            <h1>Sponsored Firefox OS</h1>
+                            <p>
+                            <span class="prompt">Project goal:</span> Bring the Internet to the next two billion when the cost of entry is out of their reach.
+                            </p>    
+                        </a>
+                    </li>
+                    
+                    <!-- MDN Redesign -->
+                    <li>
+                        <a href="portfolio/mozillaMDN.html">
+                            <img src="portfolio/img/mdnHero.png" alt="Mozilla Developer Network project image" />
+                            <h1>MDN Redesign</h1>
+                            <p>
+                                <span class="prompt">Project goal:</span> Redesign a key resource for web developers around the world in an inclusive way.
+                            </p>
+                        </a>
+                    </li>
+                   
+                    <!-- Tmo Tablet-->
+                    <li>
+                        <a href="portfolio/telco.html">
+                            <img src="portfolio/img/tmoHero.png" alt="T-mo in-store tablet app project image" />
+                            <h1>T-mo In-store Tablet</h1>
+                            <p>
+                                <span class="prompt">Project goal:</span> Design a system that disappears in the complicated juggling act of customer service and sales.
+                            </p>
+                        </a>
+                    </li>
+                    
+                    <!-- UMS -->
+                    <li>
+                        <a href="portfolio/ums.html">
+                            <img src="portfolio/img/umsHero.png" alt="Monster.com's Ultimate Money Skills project image" />
+                            <h1>Ultimate Money Skills</h1>
+                            <p>
+                                <span class="prompt">Project goal:</span> Use the web to get 16 to 20 year olds not just interested but excited about personal finance.
+                            </p>
+                        </a>
+                    </li>
+                   
+                    <!-- testing rig -->
+                    <li>
+                        <a href="portfolio/testingRig.html">
+                            <img src="portfolio/img/cameraRigHero.png" alt="Mobile Usability testing camera rig project image" />
+                            <h1>Mobile Usability Rig</h1>
+                            <p>
+                                <span class="prompt">Project goal:</span> Deisgn and build a way to test software in it's native environment; a user's hand.
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+                    </section>
+                    <!--
+                    <section>
+                        <div class="blogPreview">
+                            <div class="blogPreviewspacer"></div>
+                            <div class="sectionHeader">
+                                <h1><span class="word1">from</span> <span class="word2">the</span> <span class="word3">blog</span></h1>
+                            </div>
+                            <div class="blogContainer">
+                                <h2><a href="{{site.posts.first.url}}">{{site.posts.first.title}}</a></h2>
+                                <p>{{site.posts.first.excerpt}}</p>
+                                <p><a href="{{site.baseurl}}blog.html">see more in the blog</a></p>
+                            </div>
+                        </div>
+                    </section>
+                    -->
+                    <div class="footerSkew"></div>
+                </div>
+            </div>
+            <div id="push"></div>
+        </div>
+        {% include njppfoot.html %}
+    </body>
+</html>

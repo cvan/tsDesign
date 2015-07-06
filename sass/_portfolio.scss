@@ -1,0 +1,89 @@
+//==== Styles for the portfolio template
+
+.portfolioContent{
+	padding-top:2.8rem;
+	min-height:120px;
+}
+
+.fancyTop a{
+	color:-ts-color($textColor, 0.85);
+}
+
+.fancyTop ul{
+	@include prefixTransform(skewY(6deg));
+	list-style:none;
+	@include breakpoint($large-viewport){
+		padding-top:2rem;
+	}
+}
+.fancyTop ul li{
+	padding-bottom:0.5rem;
+}
+
+.portfolioContent .sectionHeader{
+	margin-bottom: 2rem;
+	
+}
+.portfolioCaseStudy{
+	@include span(15);
+	margin-left:auto;
+	margin-right:auto;
+	padding-left:1rem;
+	padding-right:1rem;
+	margin-bottom:1.5rem;
+
+	@include breakpoint($medium-viewport){
+		@include span(full no-gutters);
+		padding-left: span(1.5);
+		padding-right: span(1.5);
+	}
+	@include breakpoint($large-viewport){
+		@include span(12);
+		padding-left:0;
+		padding-right:0;
+		margin-left: span(2);
+	}
+}
+
+.portfolioCaseStudy section{
+	@include span(full);
+	@include breakpoint($large-viewport){
+		@include span(12);
+		margin-left: span(2);
+	}
+}
+.portfolioCaseStudy p{
+	width:100%;
+	margin-top:0rem;
+	margin-bottom:2rem;
+}
+.portfolioCaseStudy h2{
+	color:-ts-color($caseStudyH2Color,0.95);
+	margin-top:0rem;
+	margin-bottom:1rem;
+	@include breakpoint($medium-viewport){
+		@include span(full);
+	}
+	@include breakpoint($large-viewport){
+		
+	}
+}
+
+.caseStudyImageLeft, .caseStudyImageRight{
+	display:inline-block;
+	width:span(full);
+	clear:both;
+}
+.caseStudyImageLeft img, .caseStudyImageRight img{
+	width:100%;
+}
+.caseStudyImageCaption{
+	display:block;
+	font-size:0.9rem;
+	margin-top:0.5rem;
+	margin-bottom:1.2rem;
+	@include breakpoint($medium-viewport){
+		font-size: 0.8rem;
+
+	}
+}

@@ -1,0 +1,96 @@
+//==== Shenanigans page styles
+// most of this page is a mashup of the index page and the portfolio template
+
+.shenanigansIntro{
+	@include prefixTransform(skewY(6deg));
+	width:span(15);
+	padding-left:1rem;
+	padding-right:1rem;
+	padding-bottom:1rem;
+	@include breakpoint($medium-viewport){
+		width:span(9);
+		padding-bottom:3.6rem;
+	}
+	@include breakpoint($large-viewport){
+		width:span(8);
+		padding-bottom:3.6rem;
+	}
+}
+.shenanigans{
+	@include span(15);
+	margin-left:auto;
+	margin-right:auto;
+	padding-left:1rem;
+	padding-right:1rem;
+	margin-bottom:1.5rem;
+
+	@include breakpoint($medium-viewport){
+		@include span(full no-gutters);
+		padding-left: span(1.5);
+		padding-right: span(1.5);
+	}
+	@include breakpoint($large-viewport){
+		@include span(12);
+		padding-left:0;
+		padding-right:0;
+		margin-left: span(2);
+	}
+}
+
+.shenanigansList{
+	@include span(full no-gutters);
+	list-style:none;
+	padding-left:0rem;
+
+	@include breakpoint($large-viewport){
+		@include span(16);
+	}
+}
+
+.shenanigansList li{
+	display:inline-block;
+	width:100%;
+	margin-bottom: 1rem;
+	@include breakpoint($medium-viewport){
+		display:block;
+		@include span(7);
+		padding-left:span(0.5);
+		padding-right:1rem;
+		height:400px;
+	}
+	@include breakpoint($large-viewport){
+		width: span(4.5 of 14);
+		padding-left:1rem;
+		padding-right:1rem;
+
+	}
+}
+
+.shenanigansList li a{
+	width:90%;
+	background-color:-ts-color($gridListAccent, 0.95);
+}
+
+.shenanigansList li a img{
+	width:100%;
+}
+
+.shenanigansList li a h1{
+	font-size:1.65rem;
+	font-weight:400;
+	margin-top:0rem;
+	margin-bottom:0.3rem;
+	color:-ts-color($textColor,0.9);
+	@include breakpoint($large-viewport){
+		height:35px;
+	}
+}
+
+.shenanigansList li a p{
+	margin-top:0rem;
+	margin-bottom:1rem;
+	color:-ts-color($textColor, 0.95);
+	@include breakpoint($large-viewport){
+		height:85px;
+	}
+}

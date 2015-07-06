@@ -1,0 +1,265 @@
+//==== Styles for the homepage
+.indexContent{
+	padding-top:2.8rem;
+	min-height:120px;
+}
+
+//==== Fancy text
+
+.fancyTop{
+	@include span(full no-gutters);
+	color:-ts-color($headerTextColor, 0.95);
+	background-color:-ts-color($headerBG, 1);
+	margin-bottom:0.2rem;
+	@include prefixTransform(skewY(-6deg));
+
+}
+
+#fancyText{
+	@include span(10);
+	@include prefixTransform(skewY(6deg));
+	@include breakpoint($large-viewport){
+		margin-bottom: 1.5rem;
+	}
+}
+.bigFancyText{
+	font-size:4.5rem;
+	margin-top:-1.5rem;
+	margin-bottom:0.7rem;
+	padding-left:0.2rem;
+	// this is messy as fuck, but I can't get any of the JS resizers to work AND it seems silly 
+	// to use JS to deal with these 4 lines of text. Suggestions welcome to deal with resizing
+	// the headline more elegantly 
+	@include breakpoint(500px){
+		font-size: 5rem;
+	}
+	@include breakpoint(600px){
+		font-size: 5.4rem;
+	}
+	@include breakpoint(700px){
+		font-size: 6.4rem;
+	}
+	@include breakpoint($medium-viewport){ //740px
+		padding-left:0.25rem;
+		font-size:7rem;
+		margin-bottom: 0.5rem;
+		margin-top:-1.8rem;
+	}
+	@include breakpoint(900px){
+		font-size: 8.4rem;
+	}
+	@include breakpoint(1100px){
+		font-size: 10.2rem;
+	}
+	@include breakpoint($large-viewport){ //1248px
+		font-size: 12rem;
+		margin-top:-2.5rem;
+	}
+}
+
+.smFancyText{
+	font-size:1.15rem;
+	font-weight:100;
+	padding-left:1rem;
+	margin-top:0rem;
+	margin-bottom:0.4rem;
+	// this is messy as fuck, but I can't get any of the JS resizers to work AND it seems silly 
+	// to use JS to deal with these 4 lines of text. Suggestions welcome to deal with resizing
+	// the headline more elegantly 
+	@include breakpoint(374px){
+		margin-bottom:0.6rem;
+		&:nth-of-type(3){
+			padding-left:3.2rem;
+		}
+		&:nth-of-type(4){
+			padding-left:4.8rem;
+		}
+	}
+	@include breakpoint(500px){
+		padding-left:2rem;
+		&:nth-of-type(3){
+			padding-left:4rem;
+		}
+		&:nth-of-type(4){
+			padding-left:6rem;
+		}
+	}
+	@include breakpoint(600px){
+		font-size: 1.3rem;
+		padding-left:3.4rem;
+		&:nth-of-type(3){
+			padding-left:6.4rem;
+		}
+		&:nth-of-type(4){
+			padding-left:8.4rem;
+		}	
+	}
+	@include breakpoint(700px){
+		font-size: 1.8rem;
+	}
+	@include breakpoint($medium-viewport){ //740px
+		font-size: 1.8rem;
+		padding-left: 3.4rem;
+		margin-bottom:0.8rem; 
+		&:nth-of-type(3){
+			padding-left:8.4rem;
+		}
+		&:nth-of-type(4){
+			padding-left:11.4rem;
+		}
+	}
+	@include breakpoint(900px){
+		padding-left: 7rem;
+		&:nth-of-type(3){
+			padding-left:11rem;
+		}
+		&:nth-of-type(4){
+			padding-left:15rem;
+		}	
+	}
+	@include breakpoint(1100px){
+		font-size: 2rem;
+		padding-left: 8.4rem;
+		&:nth-of-type(3){
+			padding-left:15.4rem;
+		}
+		&:nth-of-type(4){
+			padding-left:21.4rem;
+		}	
+	}
+	@include breakpoint($large-viewport){ //1248px
+		font-size: 2.5rem;
+		padding-left: 8.4rem;
+		&:nth-of-type(3){
+			padding-left:15.4rem;
+		}
+		&:nth-of-type(4){
+			padding-left:21.4rem;
+		}
+	}
+	
+	
+}
+.aka{
+	//text-shadow: 2px 5px 6px -ts-color($pink, 0.7);	
+	font-size:0.9rem;
+	color:-ts-color($headerTextColor, 0.95);
+	@include breakpoint($medium-viewport){
+		font-size:1.3rem;
+	}
+	
+	
+}
+#selfie{
+	@include span(5);
+	margin-top:4.4rem;
+	margin-bottom:0.4rem;
+	padding-right:0rem;
+	margin-left:-0.35rem;
+	@include prefixTransform(skewY(6deg) rotate(-6deg));
+
+	// see all the mess of managing the text layout as it expands every 100px above.
+	// this is the first point where there is enough space to have the pic and the 
+	// headline sitting next to eachother
+	@include breakpoint(600px){
+		margin-top: 1.8rem;
+	}
+	@include breakpoint($medium-viewport){
+		@include span(5);
+		margin-top: 2.8rem;
+		margin-bottom: 0.7rem;
+	}
+	@include breakpoint($small-desktops){
+		margin-top:3.8rem;
+	}
+	@include breakpoint($large-viewport){
+		@include span(4);
+		margin-top:5.2rem;
+
+	}
+}
+#selfie img{
+	width:100%;
+	border: 3px solid -ts-color($bgColor, 0.95);
+	@include breakpoint($medium-viewport){
+		width:90%;
+		border: 6px solid -ts-color($bgColor, 0.95);
+	}
+	@include breakpoint($small-desktops){
+		width:75%;
+	}
+	@include breakpoint($large-viewport){
+		width:85%;
+	}
+}
+
+//==== Portfolio landing page
+
+.portfolioContent{
+	padding-top:2.8rem;
+
+}
+
+.portfolioList{
+	@include span(full no-gutters);
+	list-style:none;
+	padding-left:0rem;
+
+	@include breakpoint($large-viewport){
+		@include span(14);
+		padding-left:span(1);
+		padding-right:span(1);
+	}
+}
+
+.portfolioList li{
+	display:inline-block;
+	width:span(14);
+	padding-left:span(1);
+	padding-right:span(1);
+	margin-bottom: 1rem;
+	@include breakpoint($medium-viewport){
+		display: block;
+		@include span(7);
+		padding-left:span(0.5);
+		padding-right:1rem;
+		height:300px;
+		margin-bottom:3.5rem;
+	}
+	@include breakpoint($large-viewport){
+		width: span(4.5 of 14);
+		padding-left:1rem;
+		padding-right:1rem;
+		margin-bottom: 2rem;
+
+	}
+}
+
+.portfolioList li a{
+	width:90%;
+	background-color:-ts-color($gridListAccent, 0.95);
+}
+
+.portfolioList li a img{
+	width:100%;
+}
+
+.portfolioList li a h1{
+	font-size:1.65rem;
+	font-weight:400;
+	margin-top:0rem;
+	margin-bottom:0.3rem;
+	color:-ts-color($textColor,0.9);
+	@include breakpoint($large-viewport){
+		height:35px;
+	}
+
+}
+.portfolioList li a p{
+	margin-top:0rem;
+	margin-bottom:1rem;
+	color:-ts-color($textColor, 0.95);
+	@include breakpoint($large-viewport){
+		height:85px;
+	}
+}

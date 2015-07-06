@@ -1,1 +1,1 @@
-# Not Just Pretty Pictures dot Com
+# Tony Santos dot Design

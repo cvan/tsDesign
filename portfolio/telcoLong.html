@@ -1,0 +1,52 @@
+---
+layout: njppPortfolio
+completionDate: 2012
+projectType: Mobile &amp; Enterprise desktop apps
+issuesSolved: Information architecture, Visual design, Interaction design, Usability testing, User research 
+liveAt: not
+title: T-Mobile in-store tablet app
+heroImg: img/tmoHero.png
+---
+<section>
+<h2>Introduction</h2> 
+<p>The majority of my work at this teleco involved maintenance work on the company's customer service software for both the customer care call centers and the retail stores, keeping it up to date with new network features and fixing usability issues. From that work though came a project that unfortunately lost it's funding while I was there, but allowed us to explore and solve (at least as far as our testing showed) problems in the retail stores. After doing research in a few Seattle area stores, we designed a tablet based solution that integrated into the hectic work flow of the retail associates.</p>
+</section>
+<section>
+<h2>Understanding the work flow of a retail associate</h2>
+<p>{% include njppthumb-left.html imgSrc="img/tmo03.png" altTxt="T-mobile tablet app customer account screen" caption="In our designs, we had to find a way to bring what the reps were used to seeing into a format that would work while they carried it around with them all day." %} As you might imagine, selling mobile phones and mobile phone service and accessories in a retail store isn't the most organized or linear job you could take on. My team did four different site visits to four different stores in the greater Seattle area and observed the associates in the store. These trips were mostly observational studies, although there was a short period of time at the end of the shifts for questions. The research highlighted a few key insights that we built our designs around: </p>
+</section>
+<section>
+<h3>Five things at once is a slow period</h3>
+<p>When people go to buy a phone, they don't just come in an order it up like a Big Mac. They browse. They try different handsets, carry them around for a bit. Talk to their partners about them. Talk to their kids about them. Sometimes they'll leave the store to go find their partner in another part of the mall to discuss the handset they're thinking of buying &mdash; but don't worry they'll be right back, like 5 minutes tops... and then they're gone for two hours before they come back and buy a different handset, upgrade two lines, and buy a new case. It's not practical for any of the sales reps to have one customer at a time, the process of serving customers in a retail store is too start-and-stop. Some customers need hours of help, others minutes. Having multiple active customers at once was the reality on the ground and any solution that didn't take this into account was going to be ignored by these busy reps who had better things to do than fiddle with the software we built.</p>
+</section>
+<section>
+<h3>Nothing happens in a straight line</h3>
+<p>On paper, the process of buying a phone is a pretty straight line. Pick a handset, pick a service plan, pick your extras, pick some accessories, sign all the paperwork, pay for it. In reality, it doesn't work that way. Customers come into the store because they heard about a plan that won't work with the handset they like, they really want the latest and greatest smart-phone but they don't want to buy a plan with data because they don't think they need the data, or they decide after they've picked a handset and a plan they want a feature that isn't compatible with the other choices they've made. All of this leads to lots of jumping around in that process that looks very linear on paper. We learned in our first hour of observation that whatever we designed needed to be able to handle all of this back and forth.</p>
+</section>
+<section>
+<h3>Ergonomics or it won't get used</h3>
+<p>If you go into any mobile phone retail store you will very likely be able to see that part of being a customer service representative in one of these stores is carrying a bunch of stuff around for the customers. Old phone(s), new phone(s), accessories, fliers and brochures, paperwork they've brought in with them, magazines with an ad of the phone they want, I saw one rep carry around a customer's Starbucks cup for 45 minutes while she held every handset in the store to her ear. If we were going to put all the digital tools for these reps on a tablet, we needed to make sure we did it in a way that allowed them to use that tablet the way some of them were using clipboards, as a tray to hold a lot of this stuff while they walked around the store and talked with their customers. This meant orientation was important, having smartly designed time-out periods so the software would lock in time to avoid the touch controls being accidentally triggered by the tablet being used as a tray. The correct solution would have to not only align with the people and the way they moved through a transaction, it would also have to fit into the physical world of these reps lived in, and not be one more thing they had to tote around.</p>
+</section>
+<section>
+<h2>What we made</h2>
+<p>Based on the discussions we had and all the observations we made in the stores, it was clear the existing desktop systems were a hindrance, but just dropping a tablet version of those systems into these stores wouldn't work either, unsurprisingly.  </p>
+</section>
+<section>
+<h3>Doing a million things at once</h3>
+<p>
+	{% include njppthumb-right.html imgSrc="img/tmo02.png" altTxt="T-mobile tablet customer queue" caption="" %}We created a system that could handle multiple customers at once including a customer queue that could be managed by the floor manager and updated by each of the reps on the sales floor. This queuing system was already in place in the store and was currently being managed by a clipboard and a floor manager who chased people around the sales floor. It had to be easy to switch between "active" customers and take on new customers from the queue. This meant we made customer switching available from any point in the application, meaning changes had to be saved as soon as they were entered, just in case the rep had to quickly switch customers and forgot to hit a "save" button. This raised the issue of handling unwanted changes, as well as the technical problem of having to send a large volume of requests to the database and billing systems. The solution to enable this auto-save functionality was to not commit any changes until the very end, much like a shopping cart used in e-commerce sites. Changes could be made to a customer account, including the creation of that account itself, but none of them were final until the rep "checked out." </p>
+</section>
+<section>
+<h3>Every tablet is "my tablet"</h3>
+<p> {% include njppthumb-left.html imgSrc="img/tmo01.png" altTxt="T-mobile tablet app lockscreen" caption="" %}In our research, we noted that the sales reps used their hands to carry a lot of different things in the course of helping a customer. This also meant they would sit things down and walk away from them. With the tablet, we couldn't afford to have one tablet for each rep, the plan from the business was to have a certain number of tablets (depending on the size and traffic volume in the store) per store. Interviewing store managers in our trips, we learned they were concerned that the tablets would be something the reps would argue over. This illustrated a hard design constraint that brought a lot of fun features to life: the reps had to be able to pick up their session from any tablet in the store, and the tablets had to lock quickly once they were inactive, because they may be sitting on a shelf unattended with someone's account information on screen. It was a fairly simple design choice to create a password based login system and build a software lock in to the system to compensate for the hardware's fastest sleep time. Having that lock screen let us surface other information quickly that we would have had to bury in the app otherwise. The lock screen showed a grid of employee photos (we had those for every employee because they all had photo ID badges), using this grid we could quickly show who was currently on the floor, who currently was acting as the floor manager, and who was on break/lunch. This information sounds trivial until you are interrupted trying to sell a phone by a customer who is returning and looking for the rep that was helping her two hours ago. The lock screen could now provide the answers "Her shift ended" and "She's on lunch" and also provided quick access to who the floor manager was in case something needed to be escalated.</p>
+</section>
+<section>
+<h3>Not even rivers flow in a straight line</h3>
+<p>{% include njppthumb-right.html imgSrc="img/tmo04.png" altTxt="T-mobile tablet order flow" caption="" %}Nothing about a customer interaction was linear, and yet the systems we were trying to update all relied on linear, wizard driven task flows. We isolated the major tasks in selling and upgrading a phone and designed all the interaction points of the process to function more like a "hub-and-spoke" and less like a straight line, to accommodate the back and forth nature of how a transaction actually played out. We removed the penalty to the rep for customers changing their mind at the last second about a handset or a service plan, and this was possible mostly due to the shopping cart model we adopted to also account for the requirement to be able to quickly switch between customers.  </p>
+</section>
+<section>                                
+<h2> The Result </h2>
+<p>In the end, this design made it through a round of user testing and then was shelved, due to the expense to implement it. The testing with the store employees was very positive, they liked not having to sell the phone on the floor and then walk to a computer terminal and enter all the things they and the customer had just discussed into the system. They also felt that the new design addressed all of their major complaints with the current system, and more closely matched the work they were doing on a daily basis. This design wasn't forgotten, pieces of it made their way into smaller updates to the POS systems in the stores, and the research informed many smaller projects for both the retail store and call center systems. </p>
+ </section>
+ 
+                

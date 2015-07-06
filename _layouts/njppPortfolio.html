@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+{% include findTheCode.html %} 
+{% include njpphead.html %}
+<body>
+    <div id="wrapper">
+        <div class="container">
+            {% include njppnav.html %}
+            <div class="content portfolioContent">
+                <section>
+                    <div class="fancyTop">
+                        <ul>
+                            <li><span class="prompt">Completed on:</span> {{page.completionDate}} </li>
+                            <li><span class="prompt">Project type:</span> {{page.projectType}} </li>
+                            <li><span class="prompt">Solved:</span> {{page.issuesSolved}} </li>
+                            {% if page.liveAt != 'not' %}
+                            <li><a href="http://www.{{page.liveAt}}">Checkout the live version</a></li>
+                            {% endif %} 
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <div class="sectionHeader">
+                                <h1>{{page.title}}</h1>
+                        </div>
+                    <div class="portfolioCaseStudy">
+                        {{ content }}
+                    </div>
+                </section>
+                <div class="footerSkew"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+    {% include njppfoot.html %}
+</body>
+</html>
+

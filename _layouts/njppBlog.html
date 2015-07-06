@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+  {% include njpphead.html %}
+
+    <body>
+    <div id="wrapper">
+
+      {% include njppnav.html %}
+
+      <div id="content">
+        <div class="container">
+          <div class="row">
+            <div id="recents" class="col-lg-3 col-md-4 hidden-sm hidden-xs">
+              <h2 class="recentPosts">recent posts</h2>
+              <ul class="posts">
+                {% for post in site.posts limit:7 %}
+                  <li>
+                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}"><span class="post-date">{{ post.date | date: "%b %-d, %Y" }}:</span> {{ post.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="blog col-lg-7 col-lg-offset-1 col-md-6 col-sm-9 col-sm-offset-2 col-xs-12">
+                
+            <span class="postDate">{{page.date| date: "%-d %B %Y"}}</span><br/>{{ content }}
+            {% if page.onMozilla %}
+                  <br/><a class="crosspost" href="{{page.externalURL}}">Originally posted on MozillaUX Blog</a>
+                {% endif %}
+                {% if page.onMedium %}
+                  <br/><a class="crosspost" href="{{page.externalURL}}">Originally posted on Medium</a>
+                {% endif %}
+            <div id="recents" class="visible-sm visible-xs">
+              <h2 class="recentPosts">recent posts</h2>
+              <ul class="posts">
+                {% for post in site.posts limit:7 %}
+                  <li>
+                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}"><span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span> {{ post.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    {% include njppfoot.html %}
+    </div>
+    </body>
+</html>

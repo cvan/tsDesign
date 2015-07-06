@@ -1,0 +1,6 @@
+{% for post in site.posts %}
+	<li>
+      <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+      <span class="postDate">{{ post.date| date: "%m-%d-%Y" }}</span>&emsp;&emsp;{{ post.excerpt }}
+    </li>
+{% endfor %}

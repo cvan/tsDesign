@@ -1,0 +1,341 @@
+@charset "utf-8";
+/* 
+ * Author: Tony Santos (www.notjustprettypictures.com, github: tsmuse)
+ * If you've forked this project, please this comment section in-tact for attribution. 
+ */
+
+
+
+// base styles from compass + Susy for grid + breakpoint for media-queries 
+@import "normalize";
+@import "compass";
+@import "susy";
+@import "breakpoint";
+@import "compass/layout/sticky-footer";
+
+
+//=== Variables ===
+
+$base-font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+$longform-font-family: "Chaparral Pro", serif;
+$base-font-size:   16px;
+$base-line-height: 1.5;
+
+$phablet-viewport: 492px;
+$medium-viewport: 740px;
+$small-desktops: 855px;
+$large-viewport: 1248px;
+$maxContentWidth: 1400px;
+
+
+// terrible hack to deploy quickly. Turn this into a real styleguide ASAP!!!!!!
+$lightGrey: #d9dfd1;
+$black: #000113;
+$pink: #ce246b;
+$lightBlue: #00a8a8;
+$yellow: #dab215;
+$darkBlue: #302e33;
+$orange: $yellow;
+
+//Visual Style Framework
+$headerBG:$lightBlue;
+$footerBG:$lightBlue;
+$bgColor: $lightGrey;
+$oversizedMatBG:$black;
+$textColor: $black;
+$linkColor: $yellow;
+$linkHoverColor: $darkBlue;
+$mobileMenuBGColor: $lightGrey;
+$sectionHeaderBG: $yellow;
+$headerTextColor:$lightGrey;
+$footerTextColor: $lightGrey;
+$gridListAccent:$pink;
+$headerLinkColor:$black;
+$headerLinkHoverColor:$darkBlue;
+$footerLinkColor:$black;
+$footerLinkHoverColor:$darkBlue;
+$socialIconColor:$yellow;
+$socialIconHoverColor:$darkBlue;
+$caseStudyH2Color:$pink;
+
+
+
+//== Functions & mixins===
+
+//RGBA color builder
+@function -ts-color($rgbValue, $alpha:1){
+	@return rgba($rgbValue, $alpha);
+}
+
+@mixin prefixTransform($transform){
+	-webkit-transform: $transform;
+	-moz-transform: $transform;
+	-ms-transform: $transform;
+	-o-transform: $transform;
+	transform: $transform;
+	-webkit-backface-visibility: hidden;
+}
+
+
+//==== Susy grid setup
+
+$susy: (
+	columns: 16,
+	gutters: 1/4,
+	math: fluid,
+	output: float,
+	gutter-position: inside,
+	global-box-sizing: border-box,
+	);
+
+
+//==== generic doc setup
+*{
+	box-sizing:border-box;
+}
+body{
+	font-family:$base-font-family;
+	background-color:$oversizedMatBG;
+	color:-ts-color($textColor, 0.95);
+}
+a{
+	color: -ts-color($linkColor, 0.8);
+	text-decoration: none;
+	
+	&:hover{
+		color: -ts-color($linkHoverColor, 0.4);
+	}
+}
+
+@include sticky-footer(150px, "#wrapper", "#push", "#footer");
+
+.container{
+	@include container;
+}
+
+.content{
+	background-color:-ts-color($headerBG, 1);
+	max-width:$maxContentWidth;
+}
+
+.notIndex{
+	background-color:transparent;
+}
+#wrapper{
+	background-color:-ts-color($bgColor, 0.95);
+	max-width:$maxContentWidth;
+	margin-left:auto;
+	margin-right:auto;
+}
+//==== reusable classes
+
+
+.underline{
+	border-bottom:1px solid -ts-color(#000, 0.25);
+	font-weight:600;
+}
+.invisible{
+	display:none;
+}
+
+.active{
+	border-bottom:1px solid $linkColor;
+}
+.smImg{
+	display:inline;
+	@include breakpoint($medium-viewport){
+		display:none;
+	}
+}
+.mdImg{
+	display:none;
+	@include breakpoint($medium-viewport){
+		display:inline;
+	}
+	@include breakpoint($large-viewport){
+		display:none;
+	}
+}
+.lgImg{
+	display:none;
+	@include breakpoint($large-viewport){
+		display:inline;
+	}
+}
+
+.prompt{
+	font-size:1.1rem;
+	font-weight:600;
+
+}
+.sectionHeader{
+	@include span(full no-gutters);
+}
+.sectionHeader h1{
+	@include prefixTransform(rotate(-6deg));
+	width:span(15);
+	margin-left:span(0.5);
+	padding-left:0.2rem;
+	margin-top:-0.5rem;
+	margin-bottom:1rem;
+	font-size:1.5rem;
+	background-color:-ts-color($sectionHeaderBG, 0.9);
+	@include breakpoint(374px){
+		font-size: 2rem;
+		width:span(14);
+		margin-left:span(1);
+	}
+	@include breakpoint($medium-viewport){
+		margin-bottom: 2rem;
+	}
+	@include breakpoint($large-viewport){
+		margin-bottom: 4.5rem;
+	}
+}
+
+//==== top "bar" aka Navigation
+
+header{
+	@include span(full no-gutters);
+	position:fixed;
+	height:2.5rem;
+	padding-top:0.5rem;
+	z-index:999;
+	background-color:-ts-color($headerBG, 1);
+	max-width:$maxContentWidth;
+	@include breakpoint($medium-viewport){
+		height:3.4rem;
+	}
+	@include breakpoint($large-viewport){
+		height:4.5rem;
+	}
+}
+.nameLogo{
+	@include span(10);
+	font-size:1.4rem;
+	padding-left:0.5rem;
+	margin-right:span(1);
+	color:-ts-color($headerTextColor, 0.95);
+	font-weight:100;
+	@include breakpoint($medium-viewport){
+		@include span(5);
+		font-size:2.1rem;
+		margin-right: span(2);
+		padding-left:1rem;
+	}
+	@include breakpoint($large-viewport){
+		font-size: 3.1rem;
+	}
+
+}
+.nameLogo a{
+	color:-ts-color($headerTextColor, 0.95);
+}
+#mobileMenu{
+	@include span(4);
+	padding-left:0rem;
+	text-align:right;
+	@include breakpoint($medium-viewport){
+		display:none;
+	}
+}
+#mobileMenu a{
+	color:-ts-color($textColor, 0.85);
+}
+
+#topMenu{
+	@include span(full no-gutters);
+	background-color:-ts-color($mobileMenuBGColor, 0.95);
+	text-align:center;
+	display:none;
+	@include breakpoint($medium-viewport){
+		@include span(8);
+		text-align: right;
+		display:block;
+		background-color:transparent;
+		padding-top:1.2rem;
+	}
+	@include breakpoint($large-viewport){
+		font-size:1.25rem;
+	}
+}
+#topMenu a{
+	display:block;
+	width:100%;
+	padding-top:10px;
+	padding-bottom:10px;
+	@include breakpoint($medium-viewport){
+		display: inline;
+		margin-right:0.5rem;
+		color:-ts-color($textColor, 0.85);
+	}
+}
+.rolledDown{
+	padding-top:12.8rem;
+}
+
+//==== Footer
+footer{
+	width:100%;
+	background-color:-ts-color($footerBG, 1);
+	max-width:$maxContentWidth;
+	margin-left:auto;
+	margin-right:auto;
+}
+.footerSkew{
+	@include span(full no-gutters);
+	background-color:-ts-color($footerBG, 1);
+	@include prefixTransform(skewY(-6deg));
+		height:145px;
+		margin-bottom:-4.6rem;
+}
+footer p{
+	width:span(14);
+	padding-left:span(1);
+	padding-right:span(1);
+	color: -ts-color($footerTextColor, 0.95);
+	margin-bottom:0rem;
+	@include breakpoint($medium-viewport){
+		width:span(6);
+		padding-right:0rem;
+		display: inline-block;
+	}
+	@include breakpoint($large-viewport){
+		margin-top:1.5rem;
+	}
+}
+footer p a{
+	color:-ts-color($socialIconColor, 0.85);
+}
+footer p .fa{
+	padding-right:1rem;
+	font-size: 2.2rem;
+	padding-top: 0.2rem;
+	@include breakpoint($medium-viewport){
+		font-size:2.6rem;
+	}
+	@include breakpoint($large-viewport){
+		font-size:3rem;
+	}
+}
+footer > p.shenanigans{
+	font-size:0.8rem;
+	margin-top:0.5rem;
+	@include breakpoint($medium-viewport){
+		width:span(6);
+		padding-left:1rem;
+	}
+	@include breakpoint($large-viewport){
+		font-size: 1rem;
+	}
+}
+footer > p.shenanigans a{
+	color:-ts-color($textColor, 0.85);
+}
+
+// section specific sheets
+@import "index";
+@import "portfolio";
+@import "shenanigans";
+
+
