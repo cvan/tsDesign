@@ -1,0 +1,65 @@
+module.exports = function(grunt){
+
+	//Project config
+	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
+
+		//tasks
+		watch: {
+			compass: {
+				files: ['sass/*.{scss,sass}'],
+				tasks: ['compass:dev', 'jekyll:dev']
+			},
+			jekyll: {
+				files: ['_includes/*.html', '_layouts/*.html', '*.html', '_posts/*.{html,md}', 'portfolio/*.html', 'js/*.js', 'img/*.*'],
+				tasks: ['jekyll:dev']
+			}
+		},
+		compass: {
+			dev: {
+				options: {
+					config: 'config.rb',
+					environment: 'development',
+					outputStyle: 'nested'
+				}
+			},
+			prod: {
+				options: {
+					config: 'config.rb',
+					environment: 'production'
+				}
+			}
+		},
+		jekyll: {
+			dev: {
+				options:{
+					config: '_config.dev.yml'
+				}
+
+			},
+			prod: {
+				options: '_config.yml'
+			}
+		},
+		exec:{
+			deploy:{
+				command: 'rsync -icrz --exclude workingFiles --exclude Gruntfile.js ~/Sites/tonysantosdotdesign/v5.0/for_deploy/ username@server.com:/home/public'
+			},
+			hello:{
+				command: 'echo "hello this is a test"'
+			}
+
+		}
+	});
+
+	//Load the plugins
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-compass');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-jekyll');
+	grunt.loadNpmTasks('grunt-exec');
+
+	//Default task(s)
+	grunt.registerTask("default", ['watch']);
+
+};
